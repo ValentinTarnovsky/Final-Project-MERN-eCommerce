@@ -1,0 +1,9 @@
+@use "../../styles/scss/variables" as var;
+
+.alert {
+    @media (max-width: 650px) {
+        &__message {
+            font-size: var.$fontSizeXS;
+        }
+    }
+}

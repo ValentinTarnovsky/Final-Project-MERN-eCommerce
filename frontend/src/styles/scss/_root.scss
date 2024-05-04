@@ -1,0 +1,15 @@
+@use "./variables" as var;
+
+#root {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content auto max-content;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    gap: 0.5vw;
+
+    height: 100vh;
+    background-color: var.$colorBackgroundLighter;
+}

@@ -1,0 +1,93 @@
+@use "../../../styles/scss/variables" as var;
+
+.input-file {
+    position: relative;
+
+    width: 100%;
+
+    &__label {
+        position: absolute;
+        top: -7px;
+        left: 15px;
+
+        padding: 0 0.25rem;
+
+        font-size: var.$fontSizeXS;
+        color: var.$colorFontDark;
+        background-color: var.$colorBackgroundLighter;
+    }
+
+    &__drop-zone {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        border: 0.0675rem solid var.$colorFontDark;
+        border-radius: 0.25rem / 0.25rem;
+        padding: 0.85rem;
+
+        &__text {
+            padding: 0.85rem 0;
+            border-radius: 0.25rem / 0.25rem;
+            background-color: var.$colorBackgroundLight;
+
+            text-align: center;
+            color: var.$colorFontDark;
+        }
+
+        &__file {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+
+            svg:first-of-type {
+                height: 1rem;
+            }
+
+            svg:last-of-type {
+                margin-left: auto;
+                fill: var.$colorBackgroundDark;
+
+                &:hover {
+                    fill: var.$colorBackgroundDarker;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        &:hover {
+            border: 0.0675rem solid var.$colorBorderLessDark;
+        }
+
+        &--invalid {
+            border-color: var.$colorBorderDanger;
+
+            &:hover {
+                border: 0.0675rem solid var.$colorBorderDanger;
+            }
+        }
+    }
+
+    &__drop-zone:hover+&__label {
+        color: var.$colorFontLessDark;
+    }
+
+    &__drop-zone--invalid+&__label {
+        color: var.$colorFontDanger;
+    }
+
+    &__error {
+        margin: 0.25rem 0.85rem 0 0.85rem;
+        font-size: var.$fontSizeXS;
+        letter-spacing: 0.03333rem;
+        color: var.$colorFontDanger;
+    }
+
+    @media (max-width: 650px) {
+        &__drop-zone {
+            &__text {
+                display: none;
+            }
+        }
+    }
+}

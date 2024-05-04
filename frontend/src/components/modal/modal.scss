@@ -1,0 +1,45 @@
+@use "../../styles/scss/variables" as var;
+
+.modal {
+    background-color: var.$colorBackgroundLighter !important;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid var.$colorBorderDark;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+
+    &__imgbox {
+        img {
+            width: 100%;
+            height: 25rem;
+            object-fit: contain !important;
+            border-radius: 0.5rem / 0.5rem;
+        }
+    }
+
+    &__infobox {
+        width: 25rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        h2,
+        p:first-of-type {
+            margin-bottom: .5rem;
+        }
+        p {
+            display: flex;
+            justify-content: space-between;
+        }
+        &__infoname {
+            font-weight:600;
+        }
+    }
+    @media (max-width: 650px) {
+        flex-direction: column;
+    }
+}

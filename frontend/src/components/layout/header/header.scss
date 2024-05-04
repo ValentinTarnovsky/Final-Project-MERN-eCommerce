@@ -1,0 +1,34 @@
+@use "../../../styles/scss/variables" as var;
+
+.header {
+    grid-area: header;
+
+    background-image:
+        linear-gradient(75deg, rgba(0, 0, 0, 0.75), transparent, rgba(0, 0, 0, 0.75)),
+        url("/images/layout/header.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &__group {
+        width: 100%;
+        padding: 0.5vw;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5vw;
+
+
+        &__title {
+            color: var.$colorFontLight;
+            font-size: 4rem;
+            font-family: "Super Plants";
+
+            &--color {
+                color: var.$colorBackgroundDark;
+                -webkit-text-stroke: 0.25rem var.$colorFontLight;
+            }
+        }
+    }
+}

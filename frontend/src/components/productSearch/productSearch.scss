@@ -1,0 +1,26 @@
+@use "../../styles/scss/variables" as var;
+
+$_width: 100%;
+
+.product-search {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.25vw;
+
+    div {
+        height: 24px !important;
+
+        div input {
+            height: 24px !important;
+            padding: 0 14px;
+        }
+
+        p {
+            margin-left: 14px !important;
+        }
+    }
+
+    button {
+        height: 24px !important;
+    }
+}

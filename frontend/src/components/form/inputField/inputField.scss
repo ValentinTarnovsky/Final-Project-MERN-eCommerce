@@ -1,0 +1,39 @@
+@use "../../../styles/scss/variables" as var;
+
+.input-field {
+    width: 100%;
+
+    .MuiFormLabel-root {
+        color: var.$colorFontDark;
+    }
+
+    label.Mui-focused {
+        color: var.$colorFontLessDark !important;
+    }
+
+    div input+fieldset,
+    div textarea+fieldset {
+        border-color: var.$colorBorderDark !important;
+    }
+
+    div input:focus+fieldset,
+    div textarea:focus~.MuiOutlinedInput-notchedOutline {
+        border-color: var.$colorBorderLessDark !important;
+    }
+
+    &--invalid {
+
+        p,
+        label,
+        label.Mui-focused {
+            color: var.$colorBorderDanger !important;
+        }
+
+        div input+fieldset,
+        div input:focus+fieldset,
+        div textarea+fieldset,
+        div textarea:focus~.MuiOutlinedInput-notchedOutline {
+            border-color: var.$colorBorderDanger !important;
+        }
+    }
+}

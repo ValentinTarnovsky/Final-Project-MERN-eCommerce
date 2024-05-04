@@ -1,0 +1,17 @@
+@use "../../styles/scss/variables" as var;
+
+.tac {
+    width: var.$widthContent;
+    ul {
+        list-style:inside;
+        li{
+            margin-left: 1rem;
+        }
+    }
+    p {
+        margin-bottom: .5rem;
+    }
+    p:nth-of-type(2) {
+        margin-bottom: 0rem;
+    }
+}

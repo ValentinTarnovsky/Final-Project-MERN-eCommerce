@@ -1,0 +1,19 @@
+@use "../../../styles/scss/variables" as var;
+
+.switch {
+    display: flex;
+
+    :last-child {
+        margin-left: auto;
+    }
+
+    .Mui-checked {
+        .MuiSwitch-thumb {
+            background-color: var.$colorBackgroundDarker;
+        }
+    }
+
+    .Mui-checked+.MuiSwitch-track {
+        background-color: var.$colorBackgroundDark !important;
+    }
+}

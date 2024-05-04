@@ -1,0 +1,23 @@
+@use "../../../styles/scss/variables" as var;
+
+.form-product {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+
+    width: 556px;
+    max-width: 90vw;
+
+    &__image {
+        width: 556px;
+        max-width: 90vw;
+
+        border: 0.0675rem solid var.$colorBorderDark;
+        border-radius: 0.25rem / 0.25rem;
+    }
+    &__btn-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}

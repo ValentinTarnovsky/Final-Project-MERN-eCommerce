@@ -1,0 +1,11 @@
+@use "../../styles/scss/variables" as var;
+
+.logo {
+    h3 {
+        font-size: 2.5rem;
+        color: var.$colorFontLighter;
+        span {
+            color: var.$colorFontLessDark;
+        }
+    }
+}

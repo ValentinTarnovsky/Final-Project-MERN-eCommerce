@@ -1,0 +1,86 @@
+@use "../../../styles/scss/variables" as var;
+
+.footer {
+    grid-area: footer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    padding: 1rem 0;
+    background-color: var.$colorBackgroundVeryDark;
+    box-shadow: 0 -0.125rem 0.75rem rgba(var.$colorBackgroundDarker, 0.25);
+
+    &__groups {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        width: var.$widthContent;
+        padding: 1rem;
+        border-top: 0.125rem solid var.$colorBorderLight;
+
+        &__title {
+            color: var.$colorFontLighten;
+            font-size: var.$fontSizeMD;
+        }
+
+        &__list {
+            padding-top: 0.25rem;
+            font-size: var.$fontSizeSM;
+
+            &--explorer,
+            &--legal,
+            &--social-media {
+                display: flex;
+                flex-direction: column;
+
+                a,
+                :active {
+                    color: var.$colorFontLighten;
+                    background-color: transparent;
+                    width: fit-content;
+                }
+                a:hover {
+                    color: var.$colorFontLessDark;
+                    svg {
+                        fill: var.$colorFontLessDark;
+                    }
+                }
+            }
+
+            &--social-media {
+                a {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 0.125rem;
+                }
+                a svg {
+                    fill: var.$colorFontLighten;
+                }
+            }
+
+        }
+    }
+
+    &__copyright {
+        display: flex;
+        justify-content: center;
+
+        width: var.$widthContent;
+        border-top: 0.125rem solid var.$colorBorderLight;
+
+        span {
+            color: var.$colorFontLighten;
+            padding-top: 0.75rem;
+        }
+    }
+
+    @media (max-width: 650px) {
+        &__groups {
+            grid-template-columns: 1fr;
+            gap: 3vw;
+        }
+    }
+}

@@ -1,0 +1,43 @@
+@use "../../styles/scss/variables" as var;
+
+.button {
+    color: var.$colorFontLight !important;
+    background-color: var.$colorBackgroundDark !important;
+
+    &:hover,
+    &:active {
+        background-color: var.$colorBackgroundDarker !important;
+    }
+
+    svg {
+        font-size: var.$fontSizeMD;
+        fill: var.$colorFontLight !important;
+    }
+
+    &--danger {
+        background-color: var.$colorBackgroundDanger !important;
+
+        &:hover,
+        &:active {
+            background-color: var.$colorBackgroundVeryDanger !important;
+        }
+    }
+
+    &--disabled{
+        background-color: var.$colorBackgroundDisabled !important;
+
+        &:hover,
+        &:active {
+            background-color: var.$colorBackgroundDisabled !important;
+        }
+    }
+
+    &--black {
+        background-color: var.$colorBackgroundBlack !important;
+
+        &:hover,
+        &:active {
+            background-color: var.$colorBackgroundBlacker !important;
+        }
+    }
+}

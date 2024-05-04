@@ -1,0 +1,86 @@
+@use "../../../styles/scss/variables" as var;
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    padding: 0.25rem 0.75rem 0 0.75rem;
+    background-color: var.$colorBackgroundVeryDark;
+    border-bottom: 2px solid var.$colorBorderLessDark;
+    height: 3.5rem;
+    position: fixed;
+    z-index: 1;
+
+    opacity: .97;
+
+    &__drawer-icon {
+        svg {
+            fill: var.$colorBackgroundLight;
+        }
+    }
+
+    &__items {
+    a {
+        color: var.$colorFontLight;
+        position: relative;
+        text-decoration: none;
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var.$colorFontLessDark;
+        transition: width 0.3s ease;
+    }
+
+    &:hover::before {
+        width: 100%;
+    }
+
+    }
+
+        .active {
+            color: var.$colorFontLessDark;
+
+        }
+    }
+
+    &__shopping-cart {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+        &__icon-badge {
+            svg {
+                font-size: var.$fontSizeXL;
+                fill: var.$colorBackgroundLight;
+            }
+
+            span {
+                color: var.$colorBackgroundLight;
+                background-color: var.$colorBackgroundDark;
+            }
+        }
+    }
+
+    @media (max-width: 650px) {
+        &__items {
+            display: none;
+        }
+    }
+
+    @media (min-width: 651px) {
+        &__drawer-icon {
+            display: none;
+        }
+    }
+}
+
+.active {
+    background-color: var.$colorBackgroundLight;
+}
